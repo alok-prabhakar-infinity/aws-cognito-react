@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# AWS Cognito config (contains secrets or IDs)
+/src/awsConfig.js
+
 # testing
 /coverage
 
