@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container, Typography, Button, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import userPool from './awsConfig'; // Update path if needed
+import userPool from './awsConfig';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const user = userPool.getCurrentUser();
     if (!user) {
-      navigate('/'); // Redirect to login if no user is logged in
+      navigate('/');
     }
   }, [navigate]);
 
@@ -18,16 +18,21 @@ const Dashboard = () => {
     if (user) {
       user.signOut();
     }
-    navigate('/'); // Redirect after logout
+    navigate('/');
   };
 
   return (
     <Container>
       <Box display="flex" justifyContent="space-between" alignItems="center" mt={4}>
         <Typography variant="h3">Welcome to Dashboard!</Typography>
-        <Button variant="outlined" color="error" onClick={handleLogout}>
-          Logout
-        </Button>
+        <Box>
+          <Button variant="contained" color="primary" onClick={() => navigate('/add-user')} sx={{ mr: 2 }}>
+            Add User
+          </Button>
+          <Button variant="outlined" color="error" onClick={handleLogout}>
+            Logout
+          </Button>
+        </Box>
       </Box>
     </Container>
   );
