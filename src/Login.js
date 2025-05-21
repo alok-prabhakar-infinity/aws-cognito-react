@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CognitoUserPool, CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
-import { poolData } from "./awsConfig";  // adjust path if needed
+import { poolData } from "./awsConfig";
 import { TextField, Button, Container, Typography, Link, Box } from "@mui/material";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
