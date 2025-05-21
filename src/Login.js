@@ -56,6 +56,13 @@ const Login = () => {
           Login
         </Button>
       </form>
+      <Box mt={1} textAlign="center">
+  <Typography variant="body2">
+    <Link component={RouterLink} to="/forgot-password" underline="hover">
+      Forgot Password?
+    </Link>
+  </Typography>
+</Box>
 
       <Box mt={2} textAlign="center">
         <Typography variant="body2">
