@@ -24,7 +24,6 @@ const Login = () => {
 
     user.authenticateUser(authDetails, {
       onSuccess: (result) => {
-        console.log("Login success:", result);
         navigate('/dashboard');
       },
       onFailure: (err) => {
